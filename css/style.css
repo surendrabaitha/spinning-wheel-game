@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%; /* Ensure the content covers the full height */
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/bg\ for\ matrimony.png') no-repeat center center;
+    background-size: cover;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    top: 0px; /* Adjust vertical positioning */
+    
+}
+
+.container .outRing{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    transform: scale(1.6);
+    top: 39px;
+    right: 39px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+
+.ring{
+    position: absolute;
+    top: 55px;
+}
+
+
+.container .spinBtn {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 17px;
+    color: #333;
+    border: 6px solid rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+}
+
+.container .spinBtn::before {
+    content: '';
+    position: absolute;
+    top: -22px;
+    width: 23px;
+    height: 30px;
+    background-color: #fff;
+    clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
+}
+
+.container .wheel {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: #333;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 5s ease-in-out;
+    z-index: -1;
+}
+
+.container .wheel .number {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--clr);
+    transform-origin: bottom right;
+    transform: rotate(calc(36deg * var(--i)));
+    clip-path: polygon(0 0, 41% 0, 100% 100%, 0 56%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.container .wheel .number span {
+    position: relative;
+    transform: rotate(-36deg); /* Counter-rotate to keep text upright */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.15);
+}
+
+#winner {
+    position: absolute;
+    top: 380px;
+    color: black;
+    text-align: center;
+    border-radius: 8px;
+    padding: 3px 5px;
+    font-size: 20px;
+    background-color: white;
+    width: 80%;
+}
